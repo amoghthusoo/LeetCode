@@ -1,3 +1,3 @@
-a = ["apple", "mange"]
-for e in a:
-    print(e)
+a = "hello"
+for ch in a:
+    print(ch)
