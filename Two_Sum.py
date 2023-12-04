@@ -10,9 +10,6 @@ class Solution:
                 j += 1
             i += 1
 
-
-
-
 nums = [2,7,11,15] 
 target = 9
 obj = Solution()
