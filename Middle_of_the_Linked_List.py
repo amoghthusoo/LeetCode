@@ -1,8 +1,8 @@
 # Definition for singly-linked list.
 class ListNode:
-    def __init__(self, x):
-        self.val = x
-        self.next = None
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 
 class LinkedList:
 
@@ -20,13 +20,6 @@ class LinkedList:
         
         return head
     
-    def getReference(self, head, target):
-
-        traversePtr = head
-        while(traversePtr.val != target):
-            traversePtr = traversePtr.next
-        
-        return traversePtr
 
     def displayLinkedList(self, head):
 
@@ -38,41 +31,40 @@ class LinkedList:
         print("None")
 
 class Solution:
-
-    def deleteNode(self, node):
+    def middleNode(self, head):
         
-        traversePtr = node
-        while(True):
+        inter_list = []
 
-            traversePtr.val = traversePtr.next.val
+        traversePtr = head
+        while(traversePtr != None):
+            inter_list.append(traversePtr)
+            traversePtr = traversePtr.next
 
-            if(traversePtr.next.next == None):
-                traversePtr.next = None
-                break
-            else:
-                traversePtr = traversePtr.next
+        if(len(inter_list) % 2 == 0):
+            return inter_list[len(inter_list)//2]
+        else:
+            return inter_list[len(inter_list)//2]    
 
 def main():
 
     head = None
     linked_list = LinkedList()
 
+    head = linked_list.insertAtEnd(head, 1)
+    head = linked_list.insertAtEnd(head, 2)
+    head = linked_list.insertAtEnd(head, 3)
     head = linked_list.insertAtEnd(head, 4)
     head = linked_list.insertAtEnd(head, 5)
-    head = linked_list.insertAtEnd(head, 1)
-    head = linked_list.insertAtEnd(head, 9)
-
+    head = linked_list.insertAtEnd(head, 6)
+    
     linked_list.displayLinkedList(head)
 
-    node = linked_list.getReference(head, 1)
-
-    solution_obj = Solution()
-    solution_obj.deleteNode(node)
-
-    linked_list.displayLinkedList(head)
+    obj = Solution()
+    out = obj.middleNode(head)
+    
+    linked_list.displayLinkedList(out)
 
 if(__name__ == "__main__"):
     print()
     main()
     print()
-
