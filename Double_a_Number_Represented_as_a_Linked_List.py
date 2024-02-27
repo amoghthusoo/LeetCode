@@ -37,31 +37,46 @@ class LinkedListOperations:
 
         return head
 
-
 class Solution:
-    def swapNodes(self, head, k: int): #returns head
-        
-        referenceList = []      # List of references of each node in order
-        traversePtr = head
 
+    def insertAtEnd(self, head, element):
+        
+        temp = ListNode(element)
+
+        if(head == None):
+            head = temp
+        else:
+            traversePtr = head
+            while(traversePtr.next != None):
+                traversePtr = traversePtr.next
+            
+            traversePtr.next = temp
+        
+        return head
+    
+    def doubleIt(self, head):
+        
+        numStr = ""
+
+        traversePtr = head
         while(traversePtr != None):
-            referenceList.append(traversePtr)
+            numStr += str(traversePtr.val)
             traversePtr = traversePtr.next
 
-        referenceListLen = len(referenceList)
-        referenceList[k - 1].val, referenceList[referenceListLen - k].val = referenceList[referenceListLen - k].val, referenceList[k - 1].val 
+        numStr = str(int(numStr) * 2)
 
-        return head
+        outHead = None
 
-        
+        for ch in numStr:
+            outHead = self.insertAtEnd(outHead, int(ch))
+
+        return outHead
 
 
-_list = [7,9,6,6,7,8,3,0,9,5]
-k = 5
-
-operationObj = LinkedListOperations()
-head = operationObj.listToLinkedList(_list)
+_list = [9, 9, 9]
+oprObj = LinkedListOperations()
+head = oprObj.listToLinkedList(_list)
 
 obj = Solution()
-out = obj.swapNodes(head, k)
-operationObj.displayLinkedList(out)
+out = obj.doubleIt(head)
+oprObj.displayLinkedList(out)
