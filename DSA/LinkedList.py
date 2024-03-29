@@ -125,9 +125,6 @@ class LinkedList:
             traversePtr.next = temp
             return head            
 
-            
-
-
 linkedListOperations = LinkedList()
 obj = LinkedList()
 head = None
