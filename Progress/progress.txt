@@ -1,1 +1,1 @@
-Page 8, Alternating Digit Sum
+Page 9, Calculate Digit Sum of String (include)
