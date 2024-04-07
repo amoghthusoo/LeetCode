@@ -1,4 +1,6 @@
-a = [1, 2, 3]
+a = "123"
 
-for i, n in enumerate(a):
-    print(i)
+a = list(a)
+a = [int(i) for i in a]
+a = sum(a)
+print(a)
