@@ -15,7 +15,6 @@ class Solution:
             n -= 1        
 
 
-
 n = 8
 obj = Solution()
 solution = obj.arrangeCoins(n)

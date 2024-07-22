@@ -32,8 +32,6 @@ class Solution:
         
         sentence = sentence.split()
 
-       
-
         count = 0
 
         for word in sentence:
