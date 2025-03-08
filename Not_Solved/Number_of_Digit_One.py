@@ -7,16 +7,16 @@ class Solution:
         i = 1
         while (i <= n):
             
-            try:
-                counter += str(i).count("1")
-            except:
-                pass
+            # try:
+            #     counter += str(i).count("1")
+            # except:
+            #     pass
 
             i += 1
 
         return counter
 
-n = 13
+n = 1000000000
 obj = Solution()
 solution = obj.countDigitOne(n)
 print(solution)
