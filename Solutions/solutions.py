@@ -3,6 +3,8 @@ solution_nums = {
     2,
     4,
     7,
+    8,
+    9,
 }
 
 x = int(input("Enter solution number : "))
