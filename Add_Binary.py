@@ -7,7 +7,7 @@ class Solution:
             i = 0
             while (i < len(binStr)):
                 
-                binNum += int(binStr[i]) * 2 ** (len(binStr) - 1 - i)
+                decNum += int(binStr[i]) * 2 ** (len(binStr) - 1 - i)
                 i += 1
 
             return decNum
