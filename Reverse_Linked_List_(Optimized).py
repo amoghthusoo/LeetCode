@@ -5,7 +5,6 @@ class ListNode:
         self.next = None
 
 class LinkedList:
-
     
     def insertAtEnd(self, head, val):
         
