@@ -29,8 +29,6 @@ class Solution:
             for i in range(counter):
                 nums.append(0)
         
-
-
         return nums
 
 
