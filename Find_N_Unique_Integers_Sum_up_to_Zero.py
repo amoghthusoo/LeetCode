@@ -22,10 +22,6 @@ class Solution:
         
         return outList
 
-
-
-
-
 n = 1
 obj = Solution()
 solution = obj.sumZero(n)
