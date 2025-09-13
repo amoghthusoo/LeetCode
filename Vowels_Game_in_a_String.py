@@ -4,7 +4,7 @@ class Solution:
         vowel_count = 0
 
         for ch in s:
-            if(ch in ["a", "e", "i", "o", "u"]):
+            if(ch in {"a", "e", "i", "o", "u"}):
                 vowel_count += 1
         
         if(vowel_count == 0):
