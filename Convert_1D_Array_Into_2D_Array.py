@@ -1,17 +1,16 @@
-import numpy as np
 class Solution:
-    def construct2DArray(self, original: list, m: int, n: int) -> list:
+    def construct2DArray(self, original: list[int], m: int, n: int) -> list[list[int]]:
         
-        arr1 = np.array(original)
-
-        try:
-            return arr1.reshape(m, n)
-        except:
+        if(m * n != len(original)):
             return []
+        
+        ans = [[None for _ in range(n)] for _ in range(m)]
 
-original = [1,2]
-m = 1
-n = 1
-obj = Solution()
-solution = obj.construct2DArray(original, m, n)
-print(solution)
+
+        x = 0
+        for i in range(m):
+            for j in range(n):
+                ans[i][j] = original[x]
+                x += 1
+
+        return ans
