@@ -1,22 +1,5 @@
 class Solution:
     def maxArea(self, height: list) -> int:
-        
-        # allPossibleAreas : list = []
-        # i = 0
-        # while (i < len(height)):
-        #     j = i + 1
-        #     while (j < len(height)):
-                
-        #         area = min(height[i], height[j]) * (j - i)
-        #         if (len(allPossibleAreas) == 0):
-        #             allPossibleAreas.append(area)
-        #         elif (area > max(allPossibleAreas)):
-        #             allPossibleAreas.append(area)
-            
-        #         j += 1
-        #     i += 1
-
-        # return max(allPossibleAreas)
 
         intermediateList = []
 
