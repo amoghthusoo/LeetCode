@@ -3,10 +3,7 @@ class Solution:
     
     def findMedianSortedArrays(self, nums1: list, nums2: list) -> float:
         
-        combinedList = nums1 + nums2
-        combinedList.sort()
-
-        return median(combinedList)
+        return median(sorted(nums1 + nums2))
         
 
 nums1 = [1,2]
