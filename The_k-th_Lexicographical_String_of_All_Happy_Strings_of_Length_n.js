@@ -35,7 +35,6 @@ var getHappyString = function(n, k) {
         for(var i = 0; i < n - 1; i++){
             combinationArr = getCombinations(combinationArr);
         }
-
     }
 
     if((k - 1) < combinationArr.length){
