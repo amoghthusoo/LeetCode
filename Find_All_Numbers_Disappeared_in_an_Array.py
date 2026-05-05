@@ -1,16 +1,14 @@
 class Solution:
-    def findDisappearedNumbers(self, nums: list) -> list:
-        
-        ansArray = []
+    def findDisappearedNumbers(self, nums: list[int]) -> list[int]:
 
+        num_dict = {}
+
+        for num in nums:
+            num_dict[num] = None
+
+        out_arr = []
         for i in range(1, len(nums) + 1):
+            if(i not in num_dict):
+                out_arr.append(i)
 
-            if (i not in nums):
-                ansArray.append(i)
-        
-        return ansArray
-
-nums = []
-obj = Solution()
-solution = obj.findDisappearedNumbers(nums)
-print(solution)
+        return out_arr
