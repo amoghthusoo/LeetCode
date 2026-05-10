@@ -1,19 +1,27 @@
 class Solution:
-    def replaceElements(self, arr: list) -> list:
+    def replaceElements(self, arr: list[int]) -> list[int]:
+
+        out = []
+        _max = arr[-1]
+
+        if(len(arr) != 1):
+            out.append(_max)
+
+        i = len(arr) - 2
+        while(i >0):
+            if(arr[i] > _max):
+                _max = arr[i]
+
+            out.insert(0, _max)
+
+            i -= 1
+
         
+        out.append(-1)
 
-        i = 0
-        while (i < len(arr) - 1):
-            
-            arr[i] = max(arr[i + 1 : ])
-            
-            i += 1
+        return out
 
-        arr[-1] = -1
-
-        return arr
-
-arr = [400]
+arr = [17]
 obj = Solution()
-solution = obj.replaceElements(arr)
-print(solution)
+out = obj.replaceElements(arr)
+print(out)
