@@ -1,23 +1,13 @@
-import numpy as np
 class Solution:
-    def diagonalSum(self, mat: list) -> int:
+    def diagonalSum(self, mat: list[list[int]]) -> int:
         
-        npMat1 = np.array(mat)
+        _sum = 0
+        i = 0
+        while(i < len(mat)):
+            _sum += mat[i][i] + mat[len(mat) - 1 - i][i]
+            i += 1
         
-        for i in range(len(mat)):
-            mat[i].reverse()
-
-        npMat2 = np.array(mat)
-
-
-        diagonalSum = np.trace(npMat1) + np.trace(npMat2)
+        if(len(mat) % 2 != 0):
+            _sum -= mat[len(mat)//2][len(mat)//2]
         
-        if (len(mat) % 2 != 0):
-            diagonalSum -= mat[len(mat)//2][len(mat)//2]
-
-        return diagonalSum
-
-mat = [[5]]
-obj = Solution()
-solution = obj.diagonalSum(mat)
-print(solution)
+        return _sum
